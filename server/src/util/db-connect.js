@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const DB_LINK = process.env.DB_LINK;
+const DB_LINK = process.env.DB_LINK.trimEnd("/");
+//                                 ^^^^^^^^^^^^^
 
 const db = mongoose.connect(`${DB_LINK}/note-taking-app`);
 
